@@ -10,19 +10,21 @@ public class FriendApp {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("친구를 3명 등록해 주세요");
-        for (int i = 0; i<friendArray.length; i++) {
-            friendArray[i] = new Friend(sc.next(), sc.next(), sc.nextLine());
-        }
 
 
         // 친구정보 입력받기
-
-        // 입력받은 친구정보를 공백으로 분리
-
-        // Friend 객체 생성하여 데이터 넣기
-
-        // 배열에 추가하기
-
+//        for (int i = 0; i<friendArray.length; i++) {
+//            friendArray[i] = new Friend(sc.next(), sc.next(), sc.nextLine());
+//        }
+        for (int i = 0; i < friendArray.length; i++) {
+            String friendInfo = sc.nextLine();
+            // 입력받은 친구정보를 공백으로 분리
+            String friendInfoArray[] = friendInfo.split(" ");
+            // Friend 객체 생성하여 데이터 넣기
+            Friend friend = new Friend(friendInfoArray[0], friendInfoArray[1], friendInfoArray[2]);
+            // 배열에 추가하기
+            friendArray[i] = friend;
+        }
 
         // 친구정보 출력
         for (int i = 0; i < friendArray.length; i++) {
